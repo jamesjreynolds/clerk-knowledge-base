@@ -109,7 +109,7 @@ jobs:
 
       # Step 5: Deploy to gh-pages branch (FR-003, FR-005)
       - name: Deploy to GitHub Pages
-        run: mkdocs gh-deploy --force --message "[ci skip] Deploy {sha} from {branch}"
+        run: mkdocs gh-deploy --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
