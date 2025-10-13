@@ -6,14 +6,28 @@
   --md-primary-fg-color--dark: #015f80;
 }
 
+/* Light mode colors */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #027DA5;
+  --md-primary-fg-color--light: #0398c9;
+  --md-primary-fg-color--dark: #015f80;
+}
+
+/* Dark mode colors */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #027DA5;
+  --md-primary-fg-color--light: #0398c9;
+  --md-primary-fg-color--dark: #015f80;
+}
+
 /* Header background color */
 .md-header {
-  background-color: var(--md-primary-fg-color);
+  background-color: #027DA5 !important;
 }
 
 /* Tab navigation colors */
 .md-tabs {
-  background-color: var(--md-primary-fg-color);
+  background-color: #027DA5 !important;
 }
 
 /* Active tab highlighting */
@@ -24,9 +38,9 @@
 
 /* Link colors */
 .md-typeset a {
-  color: var(--md-primary-fg-color);
+  color: #027DA5;
 }
 
 .md-typeset a:hover {
-  color: var(--md-primary-fg-color--light);
+  color: #0398c9;
 }
