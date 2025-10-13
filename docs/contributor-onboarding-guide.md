@@ -255,7 +255,7 @@ Include before/after screenshots for visual changes.
 1. **GitHub Issues** - Bug reports and feature requests
 2. **GitHub Discussions** - General questions and ideas
 3. **Pull Request Comments** - Specific review questions
-4. **Team Chat/Slack** - Quick questions (if available)
+4. **Stake Clerk/Stake Technologist** - Quick questions (if available)
 
 ### Escalation Path
 1. Check existing documentation first

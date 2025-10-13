@@ -1,0 +1,415 @@
+# GitHub Actions Workflow Contract
+
+**Type**: CI/CD Specification
+**File**: `.github/workflows/deploy.yml` (repository root)
+**Purpose**: Defines the automated deployment workflow contract for MkDocs site
+
+---
+
+## Workflow Specification
+
+```yaml
+name: Deploy MkDocs to GitHub Pages
+
+# Trigger conditions (REQUIRED for FR-003, FR-004)
+on:
+  push:
+    branches:
+      - main  # Deploy on every push to main branch
+  pull_request:
+    branches:
+      - main  # Validate builds on PRs before merge (FR-012)
+
+# Minimal permissions (Security requirement from Constitution)
+permissions:
+  contents: write  # Required for gh-pages deployment only
+
+# Concurrent workflow control
+concurrency:
+  group: pages
+  cancel-in-progress: false  # Don't cancel in-progress deployments
+
+jobs:
+  # Job 1: Build and validate
+  build:
+    name: Build MkDocs site
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout code with full history
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Required for git-revision-date-localized plugin
+
+      # Step 2: Setup Python environment
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'  # Cache dependencies for faster builds
+
+      # Step 3: Install dependencies
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Step 4: Validate configuration
+      - name: Validate MkDocs configuration
+        run: |
+          python -c "import yaml; yaml.safe_load(open('mkdocs.yml'))"
+          echo " mkdocs.yml is valid YAML"
+
+      # Step 5: Build site with strict validation (FR-012, FR-020)
+      - name: Build MkDocs site (strict mode)
+        run: |
+          mkdocs build --strict --verbose
+        env:
+          CI: true
+
+      # Step 6: Check for large files (FR-023)
+      - name: Check file sizes
+        run: |
+          echo "Checking for files exceeding 5 MB..."
+          large_files=$(find docs -type f -size +5M 2>/dev/null || true)
+          if [ -n "$large_files" ]; then
+            echo "L Error: The following files exceed 5 MB limit:"
+            echo "$large_files"
+            echo ""
+            echo "Please optimize these files before committing."
+            echo "See CONTRIBUTING.md for image optimization guidance."
+            exit 1
+          fi
+          echo " All files are within size limits"
+
+      # Step 7: Upload build artifacts (for PR preview)
+      - name: Upload build artifacts
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: mkdocs-site
+          path: site/
+          retention-days: 7
+
+  # Job 2: Deploy to GitHub Pages (main branch only)
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      # Step 1: Checkout code with full history
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Step 2: Setup Python environment
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # Step 3: Install dependencies
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Step 4: Build site
+      - name: Build MkDocs site for deployment
+        run: mkdocs build --strict
+
+      # Step 5: Deploy to gh-pages branch (FR-003, FR-005)
+      - name: Deploy to GitHub Pages
+        run: mkdocs gh-deploy --force --message "[ci skip] Deploy {sha} from {branch}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Step 6: Post deployment notification
+      - name: Deployment success notification
+        run: |
+          echo " Successfully deployed to GitHub Pages"
+          echo "Site URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+
+  # Job 3: Deployment failure handling (FR-021, FR-022)
+  notify-failure:
+    name: Notify on deployment failure
+    runs-on: ubuntu-latest
+    needs: [build, deploy]
+    if: failure()
+
+    steps:
+      - name: Deployment failure notification
+        run: |
+          echo "L Deployment failed"
+          echo "Previous deployment remains live (automatic rollback)"
+          echo "Check workflow logs for details"
+          echo ""
+          echo "Common failure causes:"
+          echo "  - Broken internal links (check mkdocs build output)"
+          echo "  - Invalid YAML in mkdocs.yml"
+          echo "  - Missing required files referenced in navigation"
+          echo "  - Plugin errors (check dependency versions)"
+
+      # Optional: Send email/Slack notification (implement if needed)
+      - name: Send notification (placeholder)
+        run: |
+          echo "TODO: Configure email/Slack webhook for repository owner notification"
+          echo "Repository owner will receive GitHub Actions failure email by default"
+```
+
+---
+
+## Workflow Behavior
+
+### Pull Request Flow
+1. Contributor creates PR targeting main branch
+2. Workflow triggers `build` job only
+3. Validates YAML configuration
+4. Runs `mkdocs build --strict` to catch errors
+5. Checks file sizes against 5 MB limit
+6. Uploads build artifacts for preview (optional manual download)
+7. PR shows green check if build succeeds, red X if fails
+8. Build failure blocks merge (if branch protection enabled)
+
+### Main Branch Deployment Flow
+1. PR merged or direct push to main branch
+2. Workflow triggers both `build` and `deploy` jobs sequentially
+3. Build job validates and generates site
+4. Deploy job pushes to `gh-pages` branch
+5. GitHub Pages automatically publishes updated site
+6. Deployment completes within 5 minutes (SC-003 target)
+7. If deployment fails, `gh-pages` branch not updated (automatic rollback per FR-021)
+
+---
+
+## Configuration Requirements
+
+### Repository Settings
+
+#### 1. GitHub Pages Configuration
+Navigate to repository Settings ’ Pages:
+- **Source**: Deploy from a branch
+- **Branch**: `gh-pages` / `/ (root)`
+- **Custom domain**: Optional (updates after first deployment)
+
+#### 2. Branch Protection Rules (Recommended)
+Navigate to repository Settings ’ Branches ’ Add rule:
+- **Branch name pattern**: `main`
+- **Require status checks to pass before merging**: 
+  - **Required check**: `Build MkDocs site`
+- **Require review from Code Owners**:  (if CODEOWNERS file present)
+- **Require linear history**: Optional
+- **Include administrators**: Recommended for consistency
+
+#### 3. Workflow Permissions
+Navigate to repository Settings ’ Actions ’ General:
+- **Workflow permissions**: Read and write permissions
+- **Allow GitHub Actions to create and approve pull requests**: Optional
+
+### Required Secrets
+
+This workflow uses only built-in secrets:
+- `GITHUB_TOKEN`: Automatically provided by GitHub Actions (no setup needed)
+
+No additional secrets required for basic deployment.
+
+### Optional Notifications
+
+To enable deployment failure notifications beyond default GitHub emails:
+
+#### Email Notification
+```yaml
+- name: Send email notification
+  uses: dawidd6/action-send-mail@v3
+  with:
+    server_address: smtp.gmail.com
+    server_port: 465
+    username: ${{ secrets.EMAIL_USERNAME }}
+    password: ${{ secrets.EMAIL_PASSWORD }}
+    subject: "L MkDocs Deployment Failed"
+    to: admin@example.com
+    from: GitHub Actions
+    body: "Deployment failed for commit ${{ github.sha }}"
+```
+
+#### Slack Notification
+```yaml
+- name: Send Slack notification
+  uses: slackapi/slack-github-action@v1
+  with:
+    webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+    payload: |
+      {
+        "text": "L MkDocs deployment failed",
+        "blocks": [
+          {
+            "type": "section",
+            "text": {
+              "type": "mrkdwn",
+              "text": "Deployment failed for commit ${{ github.sha }}"
+            }
+          }
+        ]
+      }
+```
+
+---
+
+## Validation Rules
+
+### Build Validation (FR-012)
+-  `mkdocs build --strict` must succeed
+-  YAML configuration must be valid
+-  All internal links must resolve
+-  All referenced files must exist
+-  All navigation entries must have corresponding pages
+
+### File Size Validation (FR-023)
+-  Individual files must be d5 MB
+-  Check runs on all files in `/docs` directory
+-  Failure provides guidance per FR-024
+
+### Deployment Validation
+-  Must complete within 5 minutes (SC-003)
+-  Must only deploy from main branch
+-  Must use minimal `contents: write` permission
+-  Must preserve previous deployment on failure (FR-021)
+
+---
+
+## Performance Targets
+
+| Metric | Target | How Achieved |
+|--------|--------|--------------|
+| Build time | <3 minutes | Python dependency caching, Ubuntu runners |
+| Deployment time | <5 minutes total | mkdocs gh-deploy efficiency, GitHub Pages CDN |
+| Build success rate | >95% | Strict validation in PRs catches errors early |
+| Artifact size | <100 MB | Static files, minified assets |
+
+---
+
+## Troubleshooting
+
+### Common Workflow Failures
+
+#### 1. Build Fails: "Error: 404 page not found"
+**Cause**: Navigation references non-existent page
+**Fix**: Check `mkdocs.yml` nav section, ensure all referenced paths exist in `/docs`
+
+#### 2. Build Fails: "Config validation error"
+**Cause**: Invalid YAML syntax in `mkdocs.yml`
+**Fix**: Validate YAML locally with `python -c "import yaml; yaml.safe_load(open('mkdocs.yml'))"`
+
+#### 3. Deployment Fails: "Permission denied"
+**Cause**: Insufficient workflow permissions
+**Fix**: Enable "Read and write permissions" in repository Settings ’ Actions ’ General
+
+#### 4. Files Exceed Size Limit
+**Cause**: Image files >5 MB committed
+**Fix**: Compress images using TinyPNG, ImageOptim, or squoosh.app before committing
+
+#### 5. Git History Plugin Fails
+**Cause**: Shallow Git clone (missing history)
+**Fix**: Ensure workflow uses `fetch-depth: 0` in checkout step
+
+### Local Testing
+
+Before pushing, test the workflow steps locally:
+
+```bash
+# Validate YAML
+python -c "import yaml; yaml.safe_load(open('mkdocs.yml'))"
+
+# Check file sizes
+find docs -type f -size +5M
+
+# Build with strict validation
+mkdocs build --strict
+
+# Preview locally
+mkdocs serve
+```
+
+---
+
+## Rollback Strategy (FR-021, FR-022)
+
+### Automatic Rollback
+If deployment fails:
+1. `mkdocs gh-deploy` command exits with non-zero code
+2. Workflow marks deployment job as failed
+3. `gh-pages` branch NOT updated (previous content remains)
+4. GitHub Pages continues serving previous deployment
+5. Repository owner receives GitHub Actions failure notification email
+
+### Manual Rollback
+If deployed content has issues after successful build:
+
+```bash
+# Option 1: Revert commit on main branch
+git revert <commit-sha>
+git push origin main
+# Workflow automatically deploys previous version
+
+# Option 2: Force deploy from specific commit
+git checkout <good-commit-sha>
+mkdocs gh-deploy --force
+git checkout main
+```
+
+### Rollback Verification
+After rollback:
+1. Check GitHub Actions workflow status (should show green)
+2. Visit site URL: `https://USERNAME.github.io/clerk-knowledge-base/`
+3. Verify content matches expected version
+4. Check browser developer console for errors
+
+---
+
+## Monitoring
+
+### Workflow Status
+- Navigate to repository ’ Actions tab
+- View workflow run history
+- Click individual runs for detailed logs
+
+### Deployment Status
+- Navigate to repository ’ Environments ’ github-pages
+- View deployment history and timestamps
+- Click "View deployment" to visit live site
+
+### Performance Monitoring
+- Use Lighthouse in Chrome DevTools
+- Target: >90 score (SC-010)
+- Run on deployed site, not localhost
+
+---
+
+## Workflow Evolution
+
+### Future Enhancements
+- **PR Preview Deployments**: Deploy each PR to temporary URL for visual review
+- **Automated Link Checking**: Add external link validation step
+- **Performance Budgets**: Fail build if page size exceeds threshold
+- **Visual Regression Testing**: Compare screenshots before/after changes
+- **Dependency Scanning**: Add security vulnerability checks (Dependabot handles this)
+
+### Breaking Changes
+Changes requiring documentation updates:
+1. **Changing Python version**: Update README prerequisite
+2. **Adding new dependencies**: Update requirements.txt and onboarding guide
+3. **Changing deployment branch**: Update GitHub Pages settings
+4. **Adding required secrets**: Document in CONTRIBUTING.md
+
+---
+
+## Related Contracts
+- [MkDocs Configuration Contract](./mkdocs-config.yml)
+- [Directory Structure Contract](../data-model.md#filesystem-structure)
+- [Contributor Workflow](../quickstart.md#contribution-workflow)
+

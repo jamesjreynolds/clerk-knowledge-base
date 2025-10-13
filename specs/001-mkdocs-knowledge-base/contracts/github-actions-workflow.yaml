@@ -1,0 +1,187 @@
+# GitHub Actions Workflow Contract
+
+# This contract defines the CI/CD automation requirements for the knowledge base.
+# It ensures compliance with Constitution Principle III (Automation-Driven Deployment).
+
+# ==============================================================================
+# DEPLOYMENT WORKFLOW (REQUIRED)
+# ==============================================================================
+
+name: Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main  # REQUIRED: Deploy only from main branch
+
+permissions:
+  contents: write  # REQUIRED: Needed to push to gh-pages branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # REQUIRED: Full history for git-revision-date plugin
+
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'  # REQUIRED: Python 3.8+ per technical context
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ github.sha }}
+          path: ~/.cache
+          restore-keys: |
+            mkdocs-material-
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Deploy to GitHub Pages
+        run: |
+          mkdocs gh-deploy --force
+
+# ==============================================================================
+# BUILD VALIDATION WORKFLOW (REQUIRED FOR PRs)
+# ==============================================================================
+
+# This workflow MUST run on all pull requests to validate changes
+# before merging (FR-012: build validation requirement)
+
+name: Build Validation
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Build site
+        run: |
+          mkdocs build --strict  # REQUIRED: Strict mode fails on errors (FR-012)
+
+      - name: Validate build output
+        run: |
+          # Check that site/ directory was created
+          test -d site/
+          # Check that index.html exists
+          test -f site/index.html
+          # Check that search index was generated
+          test -f site/search/search_index.json
+
+# ==============================================================================
+# VALIDATION RULES
+# ==============================================================================
+
+# This workflow configuration MUST satisfy:
+
+# FR-003: Automatic deployment on main branch push
+# FR-004: CI/CD triggers on every main branch push
+# FR-005: Complete within 5 minutes (SC-003 target)
+# FR-012: Build validation in PRs before merge
+# FR-020: Clear error messages (mkdocs build --strict provides actionable errors)
+
+# SC-003: Deployment completes in <5 minutes
+# SC-005: 95% build success rate (monitor via GitHub Actions insights)
+
+# Constitution Principle III (Automation-Driven Deployment):
+# ✅ Triggers automatically on main branch push
+# ✅ Builds MkDocs site with all themes and plugins
+# ✅ Deploys to gh-pages branch automatically
+# ✅ Provides clear feedback (success/failure in Actions UI)
+# ✅ Completes within 5 minutes (caching helps achieve target)
+
+# Security & Maintenance Requirements:
+# ✅ Minimal permissions (contents: write only)
+# ✅ Actions pinned to major versions (v4, v5)
+# ✅ Dependency caching reduces build time
+# ✅ No secrets required (uses GITHUB_TOKEN automatically)
+
+# ==============================================================================
+# OPTIONAL ENHANCEMENTS
+# ==============================================================================
+
+# Link Checking (optional, recommended for quarterly audits)
+# Uncomment to add external link validation
+
+# - name: Check links
+#   run: |
+#     pip install linkchecker
+#     linkchecker --check-extern site/
+
+# Lighthouse Performance Audit (optional, for SC-010 validation)
+# Requires Chrome and lighthouse-ci
+
+# - name: Run Lighthouse
+#   uses: treosh/lighthouse-ci-action@v10
+#   with:
+#     urls: |
+#       https://username.github.io/repo-name/
+#     uploadArtifacts: true
+
+# Deployment Preview for PRs (optional, requires external service)
+# Netlify or Vercel can provide PR preview deployments
+# This is not required by the specification but nice-to-have
+
+# ==============================================================================
+# TROUBLESHOOTING
+# ==============================================================================
+
+# Common workflow failures:
+
+# 1. "Permission denied to gh-pages branch"
+#    Fix: Ensure permissions: contents: write in workflow
+
+# 2. "mkdocs build failed with broken links"
+#    Fix: Check error output for specific file/link, update in PR
+
+# 3. "Workflow timeout after 6 hours"
+#    Fix: Check for infinite loops, large file uploads, or missing cache
+
+# 4. "pip install requirements.txt failed"
+#    Fix: Verify requirements.txt is valid, dependencies exist on PyPI
+
+# 5. "gh-pages branch conflicts"
+#    Fix: --force flag in mkdocs gh-deploy handles this automatically
+
+# ==============================================================================
+# PERFORMANCE TARGETS
+# ==============================================================================
+
+# Based on SC-003, SC-005:
+# - Deployment duration: Target <5 minutes, fail if >10 minutes
+# - Build success rate: Monitor monthly, target >95%
+# - Cache hit rate: Should be >80% for repeat builds
+
+# Monitoring commands:
+# - View workflow runs: gh run list --workflow=deploy.yml
+# - Check failure rate: gh run list --status failure --limit 100
+# - Download artifacts: gh run download <run-id>

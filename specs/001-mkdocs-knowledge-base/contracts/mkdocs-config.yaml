@@ -1,0 +1,146 @@
+# MkDocs Configuration Contract
+
+# This is the canonical configuration schema for the knowledge base platform.
+# All knowledge base instances MUST include these required settings.
+# Optional settings can be customized per project needs.
+
+# ==============================================================================
+# REQUIRED CONFIGURATION
+# ==============================================================================
+
+site_name: "Knowledge Base Name"  # REQUIRED: Replace with actual project name
+site_url: "https://username.github.io/repo-name/"  # REQUIRED: GitHub Pages URL
+site_description: "Brief description of knowledge base"  # REQUIRED
+
+# Repository information (required for edit links)
+repo_name: "username/repo-name"  # REQUIRED: GitHub repo slug
+repo_url: "https://github.com/username/repo-name"  # REQUIRED
+edit_uri: "edit/main/docs/"  # REQUIRED: Link to edit page source
+
+# Theme configuration (Material for MkDocs is REQUIRED per research.md)
+theme:
+  name: material  # REQUIRED: Must be "material"
+
+  # Color scheme with light/dark mode (REQUIRED per FR-013)
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo  # Customizable
+      accent: indigo   # Customizable
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black   # Customizable
+      accent: indigo   # Customizable
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  # Required features per specification
+  features:
+    - navigation.tabs        # Tab-based navigation
+    - navigation.sections    # Collapsible sections
+    - navigation.expand      # Expand all sections by default
+    - navigation.top         # Back-to-top button
+    - search.highlight       # Highlight search terms (FR-006)
+    - search.share           # Share search results
+    - content.code.copy      # Copy code button (FR-007)
+    - content.action.edit    # Edit this page link
+
+# Required plugins
+plugins:
+  - search  # REQUIRED: Client-side search (FR-006)
+  - git-revision-date-localized:  # REQUIRED: Last modified dates (FR-017)
+      enable_creation_date: true
+      type: timeago  # or "date", "datetime", "iso_date", "iso_datetime"
+
+# Required markdown extensions (FR-007: syntax highlighting, tables, lists)
+markdown_extensions:
+  - pymdownx.highlight:  # Code syntax highlighting
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.superfences  # Enhanced code blocks
+  - pymdownx.tabbed:  # Tabbed content blocks
+      alternate_style: true
+  - admonition  # Callout blocks (note, warning, etc.)
+  - pymdownx.details  # Collapsible admonitions
+  - attr_list  # Add HTML attributes to elements
+  - def_list  # Definition lists
+  - tables  # Table support
+  - pymdownx.emoji:  # Emoji support
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+# ==============================================================================
+# NAVIGATION CONFIGURATION (CHOOSE ONE APPROACH)
+# ==============================================================================
+
+# OPTION 1: Automatic navigation (default, recommended for simple sites)
+# MkDocs will generate navigation from directory structure
+# No nav: section needed - comment out or remove the nav section below
+
+# OPTION 2: Manual navigation (recommended for complex sites with specific order)
+# Uncomment and customize this section to define explicit navigation structure
+#
+# nav:
+#   - Home: index.md
+#   - Getting Started:
+#     - getting-started/index.md
+#     - Installation: getting-started/installation.md
+#     - Quick Start: getting-started/quick-start.md
+#   - User Guide:
+#     - user-guide/index.md
+#     - Basic Usage: user-guide/basic-usage.md
+#     - Advanced Features: user-guide/advanced-features.md
+#   - Contributing:
+#     - contributing/index.md
+#     - Contributor Guide: contributing/contributor-guide.md
+
+# ==============================================================================
+# OPTIONAL CUSTOMIZATION
+# ==============================================================================
+
+# Custom CSS (optional, for project-specific styling per FR-018)
+extra_css:
+  - stylesheets/extra.css
+
+# Custom JavaScript (optional)
+extra_javascript:
+  - assets/js/extra.js
+
+# Social links (optional, for project context)
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/username/repo-name
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/username
+
+# Copyright notice (optional)
+copyright: "Copyright &copy; 2025 Your Organization"
+
+# ==============================================================================
+# VALIDATION RULES
+# ==============================================================================
+
+# This configuration MUST satisfy:
+# - FR-006: search plugin enabled for client-side search
+# - FR-007: markdown_extensions includes syntax highlighting, tables
+# - FR-009: theme is "material" (responsive by design)
+# - FR-013: palette includes light and dark mode toggle
+# - FR-017: git-revision-date-localized plugin enabled for page metadata
+# - FR-018: extra_css allows custom styling without breaking core
+
+# Performance targets:
+# - SC-002: <2 second page loads (Material theme optimized)
+# - SC-006: <1 second search response (Material search optimized for 500 pages)
+
+# Constitution compliance:
+# - Principle I: Documentation-First (markdown_extensions support rich content)
+# - Principle II: Contributor Accessibility (simple YAML configuration)
+# - Principle V: Static-First (no backend plugins or features)

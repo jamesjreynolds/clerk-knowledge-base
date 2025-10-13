@@ -1,0 +1,131 @@
+# Site metadata
+site_name: Ward Clerk Knowledge Base
+site_url: https://USERNAME.github.io/clerk-knowledge-base/
+site_description: Practical procedures for Ward Clerk responsibilities beyond the Church Handbook
+site_author: Ward Clerk Documentation Team
+
+# Repository integration
+repo_url: https://github.com/USERNAME/clerk-knowledge-base
+repo_name: clerk-knowledge-base
+edit_uri: edit/main/docs/
+
+# Theme configuration
+theme:
+  name: material
+  language: en
+
+  # Color palette with light/dark mode toggle
+  palette:
+    - scheme: default  # Light mode
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate  # Dark mode
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  # Material theme features
+  features:
+    - navigation.tabs           # Top-level tabs for main sections
+    - navigation.tabs.sticky    # Keep tabs visible on scroll
+    - navigation.sections       # Collapsible navigation sections
+    - navigation.expand         # Expand sections by default
+    - navigation.top            # Back-to-top button
+    - search.suggest            # Search suggestions while typing
+    - search.highlight          # Highlight search matches in content
+    - search.share              # Share search results
+    - content.code.copy         # Copy button for code blocks
+    - content.action.edit       # Show edit page link
+    - content.action.view       # Show view source link
+
+# Plugins
+plugins:
+  - search:
+      lang: en
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+      fallback_to_build_date: true
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+
+# Markdown extensions
+markdown_extensions:
+  # Standard CommonMark
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+      permalink_title: Link to this heading
+      toc_depth: 3
+  - tables
+
+  # PyMdown Extensions for enhanced features
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+# Navigation structure
+nav:
+  - Home: index.md
+  - Membership:
+    - Overview: membership/index.md
+    - Quarterly Reports: membership/quarterly-reports.md
+    - Finding Lost Members: membership/lost-members.md
+  - Financial:
+    - Overview: financial/index.md
+    - Budgets: financial/budgets.md
+    - Expenses: financial/expenses.md
+    - Audits: financial/audits.md
+    - Signature Cards: financial/signature-cards.md
+  - Reports:
+    - Overview: reports/index.md
+  - Annual History:
+    - Overview: annual-history/index.md
+  - Agent Bishop Responsibilities:
+    - Overview: agent-bishop/index.md
+
+# Extra CSS/JS
+extra_css:
+  - assets/css/custom.css
+
+# Copyright and footer
+copyright: |
+  Copyright &copy; 2025 Ward Clerk Documentation Team<br>
+  Content licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+
+# Social links
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/USERNAME/clerk-knowledge-base
+      name: View on GitHub

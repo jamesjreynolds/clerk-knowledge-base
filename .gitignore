@@ -1,0 +1,18 @@
+# MkDocs generated files
+site/
+
+# Python files
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+*.egg-info/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db

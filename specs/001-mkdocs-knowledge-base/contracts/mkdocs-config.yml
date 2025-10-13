@@ -1,0 +1,286 @@
+# MkDocs Configuration Contract
+
+**Type**: Configuration Specification
+**File**: `mkdocs.yml` (repository root)
+**Purpose**: Defines the contract for MkDocs configuration file that controls site generation
+
+---
+
+## Required Configuration
+
+```yaml
+# Site metadata (REQUIRED)
+site_name: Ward Clerk Knowledge Base
+site_url: https://USERNAME.github.io/clerk-knowledge-base/  # Replace USERNAME
+site_description: Practical procedures for Ward Clerk responsibilities beyond the Church Handbook
+site_author: Ward Clerk Documentation Team
+
+# Repository integration (REQUIRED)
+repo_url: https://github.com/USERNAME/clerk-knowledge-base  # Replace USERNAME
+repo_name: clerk-knowledge-base
+edit_uri: edit/main/docs/  # Enable "Edit this page" links
+
+# Theme configuration (REQUIRED)
+theme:
+  name: material
+  language: en
+
+  # Color palette with light/dark mode toggle (FR-013)
+  palette:
+    - scheme: default  # Light mode
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate  # Dark mode
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  # Material theme features (REQUIRED for FR-006, FR-009, FR-013)
+  features:
+    - navigation.tabs           # Top-level tabs for main sections
+    - navigation.tabs.sticky    # Keep tabs visible on scroll
+    - navigation.sections       # Collapsible navigation sections
+    - navigation.expand         # Expand sections by default
+    - navigation.top            # Back-to-top button
+    - search.suggest            # Search suggestions while typing
+    - search.highlight          # Highlight search matches in content
+    - search.share              # Share search results
+    - content.code.copy         # Copy button for code blocks
+    - content.action.edit       # Show edit page link
+    - content.action.view       # Show view source link
+
+# Plugins (REQUIRED)
+plugins:
+  - search:  # FR-006: Client-side search
+      lang: en
+  - git-revision-date-localized:  # FR-017: Show last modified dates
+      enable_creation_date: true
+      type: date
+      fallback_to_build_date: true
+  - minify:  # SC-010: Lighthouse performance optimization
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+
+# Markdown extensions (REQUIRED for FR-007)
+markdown_extensions:
+  # Standard CommonMark
+  - abbr
+  - admonition  # Callout boxes (warnings, tips, notes)
+  - attr_list
+  - def_list
+  - footnotes
+  - meta  # YAML front matter support
+  - toc:
+      permalink: true
+      permalink_title: Link to this heading
+      toc_depth: 3
+  - tables
+
+  # PyMdown Extensions for enhanced features
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret  # Superscript
+  - pymdownx.mark   # Highlighting
+  - pymdownx.tilde  # Subscript, strikethrough
+  - pymdownx.details  # Collapsible content blocks
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:  # Code syntax highlighting
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite  # Inline code highlighting
+  - pymdownx.superfences  # Enhanced fenced code blocks
+  - pymdownx.tabbed:  # Tabbed content
+      alternate_style: true
+  - pymdownx.tasklist:  # Task lists with checkboxes
+      custom_checkbox: true
+
+# Navigation structure (REQUIRED - maps to 5 main content domains)
+nav:
+  - Home: index.md
+  - Membership:
+    - Overview: membership/index.md
+    - Quarterly Reports: membership/quarterly-reports.md
+    - Finding Lost Members: membership/lost-members.md
+  - Financial:
+    - Overview: financial/index.md
+    - Budgets: financial/budgets.md
+    - Expenses: financial/expenses.md
+    - Audits: financial/audits.md
+    - Signature Cards: financial/signature-cards.md
+  - Reports:
+    - Overview: reports/index.md
+  - Annual History:
+    - Overview: annual-history/index.md
+  - Agent Bishop Responsibilities:
+    - Overview: agent-bishop/index.md
+
+# Extra CSS/JS (OPTIONAL)
+extra_css:
+  - assets/css/custom.css  # Custom styles if needed (FR-018)
+
+# Copyright and footer (OPTIONAL but RECOMMENDED)
+copyright: |
+  Copyright &copy; 2025 Ward Clerk Documentation Team<br>
+  Content licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+
+# Social links (OPTIONAL)
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/USERNAME/clerk-knowledge-base  # Replace USERNAME
+      name: View on GitHub
+```
+
+---
+
+## Configuration Validation Rules
+
+### 1. Site Metadata
+- **site_name**: Must be non-empty string
+- **site_url**: Must match GitHub Pages URL format: `https://<username>.github.io/<repo-name>/`
+  - Used for canonical URLs and sitemap generation
+  - Critical for proper asset path resolution
+- **site_description**: Recommended for SEO
+- **site_author**: Recommended for attribution
+
+### 2. Repository Integration
+- **repo_url**: Must be valid GitHub repository URL
+- **repo_name**: Should match repository name
+- **edit_uri**: Enables "Edit this page" links in Material theme
+  - Format: `edit/<branch>/docs/` where `<branch>` is typically `main`
+
+### 3. Theme Configuration
+- **theme.name**: MUST be `material` (Constitution requirement)
+- **theme.palette**: MUST include both light and dark modes (FR-013)
+- **theme.features**: MUST include:
+  - `search.suggest` and `search.highlight` for FR-006
+  - `content.code.copy` for user experience
+  - Navigation features for FR-008
+
+### 4. Required Plugins
+- **search**: MUST be included (FR-006 requirement)
+- **git-revision-date-localized**: MUST be included (FR-017 requirement)
+- **minify**: SHOULD be included (SC-010 performance target)
+
+### 5. Markdown Extensions
+- **admonition**: REQUIRED for warning/alert callouts from spec examples
+- **tables**: REQUIRED (FR-007)
+- **pymdownx.highlight**: REQUIRED for code syntax highlighting (FR-007)
+- **pymdownx.superfences**: REQUIRED for enhanced code blocks
+- **pymdownx.emoji**: REQUIRED for callout icons ( , =¨)
+
+### 6. Navigation Structure
+- **nav**: MUST reflect 5 main content domains from spec:
+  - Membership
+  - Financial
+  - Reports
+  - Annual History
+  - Agent Bishop Responsibilities
+- Each section MUST have an `index.md` landing page
+- Navigation order MUST be logical for user workflows
+
+---
+
+## Environment-Specific Configuration
+
+### Development (local preview)
+```bash
+# Start local server with live reload
+mkdocs serve
+
+# Specify custom port
+mkdocs serve -a localhost:8080
+
+# Dirty reload for faster iteration (skips plugin processing)
+mkdocs serve --dirtyreload
+```
+
+### Production (GitHub Pages deployment)
+```bash
+# Build with strict validation (fails on warnings)
+mkdocs build --strict
+
+# Deploy to gh-pages branch
+mkdocs gh-deploy --force
+```
+
+---
+
+## Validation Command
+
+Before committing changes to `mkdocs.yml`:
+
+```bash
+# Test configuration validity
+mkdocs build --strict
+
+# Check for YAML syntax errors
+python -c "import yaml; yaml.safe_load(open('mkdocs.yml'))"
+
+# Preview changes locally
+mkdocs serve
+```
+
+---
+
+## Extension Points
+
+### Custom CSS (FR-018)
+```yaml
+extra_css:
+  - assets/css/custom.css
+```
+
+Place custom styles in `/docs/assets/css/custom.css`. Will be included after Material theme CSS, allowing overrides without breaking core functionality.
+
+### Custom JavaScript (if needed)
+```yaml
+extra_javascript:
+  - assets/js/custom.js
+```
+
+Use sparingly - most features available through Material theme configuration.
+
+### Additional Plugins (if needed)
+```yaml
+plugins:
+  - search
+  - git-revision-date-localized
+  - minify
+  - awesome-pages  # Example: Per-directory navigation customization
+```
+
+New plugins MUST NOT conflict with constitutional requirements (static-first, no backend).
+
+---
+
+## Breaking Changes
+
+Changes that require documentation updates:
+
+1. **Changing site_url**: Breaks existing external links
+2. **Removing nav entries**: Breaks bookmarks/search engine results
+3. **Changing theme**: Breaks custom CSS/JS
+4. **Removing plugins**: May break features (e.g., search, last modified dates)
+5. **Removing markdown extensions**: Breaks existing content using those features
+
+Always test with `mkdocs build --strict` before deploying breaking changes.
+
+---
+
+## Related Contracts
+- [GitHub Actions Workflow Contract](./github-actions-workflow.yml)
+- [Directory Structure Contract](../data-model.md#filesystem-structure)
+- [Markdown Style Guide](../quickstart.md#markdown-best-practices)
+
