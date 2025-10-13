@@ -64,6 +64,7 @@ If you want to preview your changes before submitting:
 ### What Makes Good Clerk Documentation?
 
 **Focus on practical "how-to" procedures:**
+
 - ✅ Step-by-step instructions for common tasks
 - ✅ Screenshots showing where to click in LCR
 - ✅ Troubleshooting tips for common problems
@@ -71,6 +72,7 @@ If you want to preview your changes before submitting:
 - ✅ Real examples from your ward experience
 
 **Avoid these:**
+
 - ❌ Copying directly from the Church Handbook (link to it instead)
 - ❌ Ward-specific information (names, numbers, local policies)
 - ❌ Confidential information
@@ -79,6 +81,7 @@ If you want to preview your changes before submitting:
 ### File Naming for Clerk Procedures
 
 Use descriptive, lowercase filenames with hyphens:
+
 - ✅ `quarterly-report-submission.md`
 - ✅ `reimbursement-procedures.md`
 - ✅ `lost-member-search.md`
@@ -86,6 +89,7 @@ Use descriptive, lowercase filenames with hyphens:
 - ❌ `my notes.md` (has spaces)
 
 Store files in the appropriate section folder:
+
 - `docs/membership/` - Membership record procedures
 - `docs/financial/` - Financial procedures
 - `docs/reports/` - Reporting procedures
@@ -135,6 +139,7 @@ See also [Quarterly Reports](quarterly-reports.md)
 ```
 
 **Image Guidelines:**
+
 - Save screenshots to `docs/assets/images/`
 - Use descriptive filenames: `lcr-quarterly-report-button.png`
 - Keep images under 5 MB (compress if needed at tinypng.com)
@@ -229,15 +234,18 @@ Go through each section and verify the information is current:
 ### Writing Style for Clerks
 
 **Use clear, step-by-step language:**
+
 - ✅ "Click the blue Submit button in the upper right corner"
 - ❌ "Navigate to the submission interface and execute the report"
 
 **Write for busy clerks who need quick answers:**
+
 - Start with the most common scenario
 - Put troubleshooting tips in callout boxes
 - Include time estimates ("This takes about 5 minutes")
 
 **Include helpful context:**
+
 - Explain WHY something matters, not just HOW
 - Mention common mistakes to avoid
 - Share tips that save time
@@ -247,6 +255,7 @@ Go through each section and verify the information is current:
 ### Branch Naming for Clerk Content
 
 Use clear names that describe what you're adding:
+
 - `add-quarterly-report-guide` - New procedure page
 - `fix-reimbursement-link` - Fixing broken links
 - `update-lost-member-search` - Updating existing content
@@ -257,12 +266,14 @@ Use clear names that describe what you're adding:
 Keep it simple and descriptive:
 
 **Good examples:**
+
 - `Add procedure for submitting quarterly reports`
 - `Fix broken link to Church Handbook`
 - `Update screenshot for new LCR interface`
 - `Add troubleshooting section for reimbursements`
 
 **What to avoid:**
+
 - `Update` (too vague)
 - `Fixed stuff` (not descriptive)
 - `WIP` (don't commit incomplete work)
@@ -326,6 +337,7 @@ If applicable, include before/after screenshots showing the change.
 ### Fixing Broken Links
 
 If you find a broken link:
+
 1. Note which page has the broken link
 2. Find the correct link (test it in your browser)
 3. Update the Markdown file with the correct link
@@ -365,21 +377,25 @@ If you find a broken link:
 ### What to Do If You're Stuck
 
 **Scenario 1: "I don't know Markdown"**
+
 - Start with the 10-minute tutorial at markdowntutorial.com
 - Look at existing pages and copy their formatting
 - Use GitHub's online editor which has a preview button
 - Ask for help in your pull request - we're happy to guide you!
 
 **Scenario 2: "I have a procedure to share but don't know where it should go"**
+
 - Create the page anyway and ask in your pull request
 - We'll help you find the right place and update navigation
 
 **Scenario 3: "Git is confusing me"**
+
 - Use GitHub Desktop instead of command line
 - Or edit files directly on GitHub.com in your browser
 - Watch a 5-minute YouTube tutorial on "GitHub Desktop basics"
 
 **Scenario 4: "I want to contribute but don't have time to learn all this"**
+
 - Write up your procedure in an email or Word doc
 - Open a GitHub Issue and paste it there
 - Someone else can help format it into Markdown
@@ -395,12 +411,14 @@ Every contribution helps fellow clerks serve more effectively. Thank you for sha
 ## Remember
 
 **The most valuable contributions are:**
+
 - Real procedures you've actually used in your calling
 - Workarounds for common LCR frustrations
 - Tips that save time or prevent mistakes
 - Clear explanations for confusing parts of clerk work
 
 **You don't need to be perfect:**
+
 - Other contributors will help improve your writing
 - It's okay to start with a rough draft
 - We'd rather have your knowledge than have it stay in your head!
