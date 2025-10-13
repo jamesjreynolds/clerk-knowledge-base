@@ -1,0 +1,32 @@
+/* Custom color scheme for Ward Clerk Knowledge Base */
+
+:root {
+  --md-primary-fg-color: #027DA5;
+  --md-primary-fg-color--light: #0398c9;
+  --md-primary-fg-color--dark: #015f80;
+}
+
+/* Header background color */
+.md-header {
+  background-color: var(--md-primary-fg-color);
+}
+
+/* Tab navigation colors */
+.md-tabs {
+  background-color: var(--md-primary-fg-color);
+}
+
+/* Active tab highlighting */
+.md-tabs__link--active {
+  color: #fff;
+  opacity: 1;
+}
+
+/* Link colors */
+.md-typeset a {
+  color: var(--md-primary-fg-color);
+}
+
+.md-typeset a:hover {
+  color: var(--md-primary-fg-color--light);
+}

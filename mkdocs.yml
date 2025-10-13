@@ -1,11 +1,11 @@
 # Site metadata
 site_name: Ward Clerk Knowledge Base
-site_url: https://USERNAME.github.io/clerk-knowledge-base/
+site_url: https://jamesjreynolds.github.io/clerk-knowledge-base/
 site_description: Practical procedures for Ward Clerk responsibilities beyond the Church Handbook
 site_author: Ward Clerk Documentation Team
 
 # Repository integration
-repo_url: https://github.com/USERNAME/clerk-knowledge-base
+repo_url: https://github.com/jamesjreynolds/clerk-knowledge-base
 repo_name: clerk-knowledge-base
 edit_uri: edit/main/docs/
 
@@ -127,5 +127,5 @@ copyright: |
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/USERNAME/clerk-knowledge-base
+      link: https://github.com/jamesjreynolds/clerk-knowledge-base
       name: View on GitHub
