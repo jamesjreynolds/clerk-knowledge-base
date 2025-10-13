@@ -57,7 +57,7 @@ Specific responsibilities for clerks serving in agent bishop capacities, includi
 
 ## Getting Started
 
-**For Contributors:** If you're a ward clerk wanting to share your knowledge or improve existing documentation, see the [Contribution Guide](https://github.com/jamesjreynolds/clerk-knowledge-base/blob/main/CONTRIBUTING.md).
+**For Contributors:** If you're a ward clerk wanting to share your knowledge or improve existing documentation, see the [Contributor Onboarding Guide](contributor-onboarding-guide.md).
 
 **For Readers:** Use the navigation menu above or the search function (top right) to find specific topics. All content is organized by the main responsibility areas listed above.
 

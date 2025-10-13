@@ -11,8 +11,8 @@
 
 ### Initial Setup (10 minutes)
 - [ ] Fork the repository on GitHub
-- [ ] Clone your fork locally: `git clone https://github.com/YOUR-USERNAME/REPO-NAME.git`
-- [ ] Set up upstream remote: `git remote add upstream https://github.com/ORIGINAL-OWNER/REPO-NAME.git`
+- [ ] Clone your fork locally: `git clone https://github.com/YOUR-USERNAME/clerk-knowledge-base.git`
+- [ ] Set up upstream remote: `git remote add upstream https://github.com/jamesjreynolds/clerk-knowledge-base.git`
 - [ ] Create Python virtual environment: `python -m venv venv`
 - [ ] Activate virtual environment: `source venv/bin/activate`
 - [ ] Install dependencies: `pip install -r requirements.txt`
