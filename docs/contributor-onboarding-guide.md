@@ -22,12 +22,14 @@ You don't need to be a technical expert - if you can write an email, you can con
 ### Initial Setup (10 minutes)
 
 **Option A: Using GitHub Desktop (Recommended for non-technical users)**
+
 - [ ] Install GitHub Desktop from desktop.github.com
 - [ ] Fork the repository by clicking "Fork" at github.com/jamesjreynolds/clerk-knowledge-base
 - [ ] Clone your fork using GitHub Desktop
 - [ ] Open the folder in your text editor
 
 **Option B: Using Command Line (For technical users)**
+
 - [ ] Fork the repository on GitHub
 - [ ] Clone your fork locally: `git clone https://github.com/YOUR-USERNAME/clerk-knowledge-base.git`
 - [ ] Set up upstream remote: `git remote add upstream https://github.com/jamesjreynolds/clerk-knowledge-base.git`
@@ -35,7 +37,9 @@ You don't need to be a technical expert - if you can write an email, you can con
 ### First Test (5 minutes)
 
 **Testing Locally (Optional but Recommended)**
+
 If you want to preview your changes before submitting:
+
 - [ ] Install Python 3.8+ from python.org
 - [ ] Open terminal/command prompt in the project folder
 - [ ] Run: `pip install -r requirements.txt`
@@ -43,6 +47,7 @@ If you want to preview your changes before submitting:
 - [ ] Open http://localhost:8000 in browser
 
 **Simple Editing (No local testing)**
+
 - [ ] Edit files directly on GitHub.com in your browser
 - [ ] Preview changes using GitHub's preview button
 
