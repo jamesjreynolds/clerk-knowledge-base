@@ -17,13 +17,13 @@ theme:
   # Color palette with light/dark mode toggle
   palette:
     - scheme: default  # Light mode
-      primary: indigo
+      primary: custom
       accent: indigo
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate  # Dark mode
-      primary: indigo
+      primary: custom
       accent: indigo
       toggle:
         icon: material/brightness-4
