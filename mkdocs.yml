@@ -113,7 +113,9 @@ nav:
     - Overview: annual-history/index.md
   - Agent Bishop Responsibilities:
     - Overview: agent-bishop/index.md
-  - Contributing: contributor-onboarding-guide.md
+  - Contributing:
+    - Onboarding Guide: contributor-onboarding-guide.md
+    - Markdown Style Guide: contributing/markdown-guide.md
 
 # Extra CSS/JS
 extra_css:
