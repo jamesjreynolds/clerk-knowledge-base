@@ -10,6 +10,7 @@ Quarterly reports are one of the most important recurring responsibilities for w
 ## Resources
 
 - [Church Handbook - Chapter 33: Records and Reports](https://www.churchofjesuschrist.org/study/manual/general-handbook/33-records-and-reports)
+
 - [LCR Reporting Tools](https://lcr.churchofjesuschrist.org/)
 
 ---

@@ -10,6 +10,7 @@ Ward clerks play an important role in helping locate members who have lost conta
 ## Resources
 
 - [Church Handbook - Chapter 33: Records and Reports](https://www.churchofjesuschrist.org/study/manual/general-handbook/33-records-and-reports)
+
 - [LCR Tools](https://lcr.churchofjesuschrist.org/)
 
 ---

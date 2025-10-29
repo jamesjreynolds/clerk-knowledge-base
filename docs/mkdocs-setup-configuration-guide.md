@@ -1,9 +1,13 @@
 # MkDocs Knowledge Base Setup Guide
 
 ## Prerequisites
+
 - Python 3.8+ installed
+
 - Git installed and configured
+
 - GitHub account
+
 - Code editor (VS Code recommended)
 
 ## Step-by-Step Setup Process
@@ -115,24 +119,37 @@ jobs:
 ## Troubleshooting Common Issues
 
 ### Site not updating after push
+
 - Check GitHub Actions workflow status
+
 - Verify GitHub Pages settings
+
 - Ensure workflow has proper permissions
 
 ### Build fails with config errors
+
 - Validate mkdocs.yml syntax
+
 - Check all required dependencies installed
+
 - Review error logs in Actions tab
 
 ### Theme not loading correctly
+
 - Verify material theme installed
+
 - Check theme configuration in mkdocs.yml
+
 - Clear browser cache
 
 ## Security and Maintenance Best Practices
 
 - Update dependencies monthly
+
 - Use dependabot for automatic updates
+
 - Monitor GitHub Actions for failures
+
 - Regular content audits
+
 - Performance monitoring
