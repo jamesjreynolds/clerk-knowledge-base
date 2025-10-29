@@ -39,15 +39,15 @@ This knowledge base provides step-by-step procedures, practical tips, and workar
 
 ### What Makes a Good Contribution?
 
-✅ Step-by-step instructions for common tasks
-✅ Screenshots showing where to click in LCR
-✅ Troubleshooting tips for common problems
-✅ Workarounds for LCR system quirks
-✅ Real examples from your ward experience
+- ✅ Step-by-step instructions for common tasks
+- ✅ Screenshots showing where to click in LCR
+- ✅ Troubleshooting tips for common problems
+- ✅ Workarounds for LCR system quirks
+- ✅ Real examples from your ward experience
 
-❌ Ward-specific information (names, numbers, local policies)
-❌ Confidential information
-❌ Content copied directly from the Church Handbook
+- ❌ Ward-specific information (names, numbers, local policies)
+- ❌ Confidential information
+- ❌ Content copied directly from the Church Handbook
 
 ## Technology Stack
 
