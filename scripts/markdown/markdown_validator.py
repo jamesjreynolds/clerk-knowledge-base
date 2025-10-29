@@ -222,8 +222,11 @@ def detect_list_spacing_issues(file: MarkdownFile) -> List[ValidationError]:
             # Check if previous line exists and is not blank
             if i > 0:
                 prev_line = file.lines[i - 1]
-                if prev_line.strip() != "":
-                    # Previous line has content and current line is a list
+                prev_is_list = bool(re.match(r"^\d+\.\s", prev_line)) or bool(re.match(r"^[-*+]\s", prev_line))
+
+                # Only flag error if previous line is not blank AND not a list item
+                # (i.e., this is the START of a new list, not a continuation)
+                if prev_line.strip() != "" and not prev_is_list:
                     error_type = "missing_blank_before_ordered_list" if is_ordered_list else "missing_blank_before_unordered_list"
                     list_type = "ordered" if is_ordered_list else "unordered"
 
@@ -338,14 +341,18 @@ def fix_list_spacing(file: MarkdownFile) -> Tuple[MarkdownFile, List[CorrectionO
         is_list = bool(re.match(r"^\d+\.\s", line)) or bool(re.match(r"^[-*+]\s", line))
 
         if is_list and len(new_lines) > 0:
-            # Check if previous line is not blank
-            if new_lines[-1].strip() != "":
+            prev_line = new_lines[-1]
+            prev_is_list = bool(re.match(r"^\d+\.\s", prev_line)) or bool(re.match(r"^[-*+]\s", prev_line))
+
+            # Only insert blank line if previous line is not blank AND not a list item
+            # (i.e., this is the START of a new list, not a continuation)
+            if prev_line.strip() != "" and not prev_is_list:
                 # Insert blank line
                 corrections.append(CorrectionOperation(
                     file_path=str(file.path),
                     line_number=i + 1,
                     operation_type="insert_blank_line",
-                    before_context=new_lines[-1].strip(),
+                    before_context=prev_line.strip(),
                     after_context=line.strip(),
                     applied=True
                 ))
@@ -440,6 +447,70 @@ def fix_directory(
         files_unchanged=files_unchanged,
         success=True,
         backup_created=create_backup and not dry_run
+    )
+
+
+def validate_directory(
+    directory: Path,
+    config: Optional[Path] = None,
+    verbose: bool = False
+) -> ValidationReport:
+    """
+    Validate all markdown files in directory.
+
+    Args:
+        directory: Path to directory to validate
+        config: Optional path to .pymarkdown.json config
+        verbose: Whether to output verbose messages
+
+    Returns:
+        ValidationReport with validation results
+
+    Raises:
+        FileNotFoundError: If directory doesn't exist
+        PermissionError: If directory not readable
+        ValueError: If config file is invalid
+    """
+    if not directory.exists():
+        raise FileNotFoundError(f"Directory not found: {directory}")
+
+    start_time = datetime.now()
+    all_errors = []
+
+    # Find all markdown files
+    md_files = list(directory.rglob("*.md"))
+
+    if verbose:
+        print(f"Found {len(md_files)} markdown files in {directory}")
+
+    for md_file in md_files:
+        if verbose:
+            print(f"Validating {md_file}...")
+
+        # Load file
+        file = load_markdown_file(md_file)
+
+        # Detect list spacing issues
+        errors = detect_list_spacing_issues(file)
+
+        if errors:
+            all_errors.extend(errors)
+            if verbose:
+                print(f"  Found {len(errors)} error(s)")
+        else:
+            if verbose:
+                print(f"  ✓ No errors")
+
+    # Calculate duration
+    duration = (datetime.now() - start_time).total_seconds() * 1000
+
+    return ValidationReport(
+        timestamp=datetime.now(),
+        files_checked=len(md_files),
+        errors=all_errors,
+        warnings=[],
+        passed=len(all_errors) == 0,
+        duration_ms=duration
     )
 
 

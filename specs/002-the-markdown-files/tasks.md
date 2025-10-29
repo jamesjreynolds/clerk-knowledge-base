@@ -100,18 +100,18 @@
 
 ### Implementation for User Story 2
 
-- [ ] T027 [US2] Implement `validate_directory()` function in `scripts/markdown/markdown_validator.py` (scan directory, run validation, generate report)
-- [ ] T028 [US2] Create `scripts/markdown/validate_markdown.py` CLI script with argument parsing (directory, --config, --output, --fail-on-warning, --verbose, --quiet, --help)
-- [ ] T029 [US2] Implement main() function in `scripts/markdown/validate_markdown.py` (calls validate_directory, formats report, handles exit codes)
-- [ ] T030 [US2] Make `scripts/markdown/validate_markdown.py` executable (chmod +x)
-- [ ] T031 [US2] Test `validate_markdown.py` locally on docs/ directory with --verbose flag
-- [ ] T032 [US2] Test `validate_markdown.py` with all output formats (text, json, github)
-- [ ] T033 [US2] Create test fixture `scripts/tests/fixtures/markdown/valid_lists.md` (properly formatted lists)
-- [ ] T034 [P] [US2] Create test fixture `scripts/tests/fixtures/markdown/header_no_space.md` (header followed by list, no blank line)
-- [ ] T035 [P] [US2] Create test fixture `scripts/tests/fixtures/markdown/bold_no_space.md` (bold text followed by list, no blank line)
-- [ ] T036 [P] [US2] Create test fixture `scripts/tests/fixtures/markdown/mkdocs_syntax.md` (admonitions, code blocks - should NOT error)
-- [ ] T037 [P] [US2] Create test fixture `scripts/tests/fixtures/markdown/mixed_issues.md` (multiple error types)
-- [ ] T038 [US2] Modify `.github/workflows/deploy.yml` to add validation step after dependencies install, before MkDocs build
+- [X] T027 [US2] Implement `validate_directory()` function in `scripts/markdown/markdown_validator.py` (scan directory, run validation, generate report)
+- [X] T028 [US2] Create `scripts/markdown/validate_markdown.py` CLI script with argument parsing (directory, --config, --output, --fail-on-warning, --verbose, --quiet, --help)
+- [X] T029 [US2] Implement main() function in `scripts/markdown/validate_markdown.py` (calls validate_directory, formats report, handles exit codes)
+- [X] T030 [US2] Make `scripts/markdown/validate_markdown.py` executable (chmod +x)
+- [X] T031 [US2] Test `validate_markdown.py` locally on docs/ directory with --verbose flag
+- [X] T032 [US2] Test `validate_markdown.py` with all output formats (text, json, github)
+- [X] T033 [US2] Create test fixture `scripts/tests/fixtures/markdown/valid_lists.md` (properly formatted lists)
+- [X] T034 [P] [US2] Create test fixture `scripts/tests/fixtures/markdown/header_no_space.md` (header followed by list, no blank line)
+- [X] T035 [P] [US2] Create test fixture `scripts/tests/fixtures/markdown/bold_no_space.md` (bold text followed by list, no blank line)
+- [X] T036 [P] [US2] Create test fixture `scripts/tests/fixtures/markdown/mkdocs_syntax.md` (admonitions, code blocks - should NOT error)
+- [X] T037 [P] [US2] Create test fixture `scripts/tests/fixtures/markdown/mixed_issues.md` (multiple error types)
+- [X] T038 [US2] Modify `.github/workflows/deploy.yml` to add validation step after dependencies install, before MkDocs build
 - [ ] T039 [US2] Test CI/CD integration by pushing feature branch and observing validation in GitHub Actions
 - [ ] T040 [US2] Verify that validation errors block merge in PR (create test PR with intentional error)
 

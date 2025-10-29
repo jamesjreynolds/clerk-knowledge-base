@@ -44,7 +44,14 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Step 4: Build site with strict validation (FR-012, FR-020)
+      # Step 4: Validate markdown syntax
+      - name: Validate Markdown Syntax
+        run: |
+          python scripts/markdown/validate_markdown.py docs/ \
+            --output github \
+            --verbose
+
+      # Step 5: Build site with strict validation (FR-012, FR-020)
       # Note: MkDocs config validation is handled by the build command itself
       - name: Build MkDocs site (strict mode)
         run: |
@@ -52,7 +59,7 @@ jobs:
         env:
           CI: true
 
-      # Step 5: Check for large files (FR-023)
+      # Step 6: Check for large files (FR-023)
       - name: Check file sizes
         run: |
           echo "Checking for files exceeding 5 MB..."
@@ -67,7 +74,7 @@ jobs:
           fi
           echo "✓ All files are within size limits"
 
-      # Step 6: Upload build artifacts (for PR preview)
+      # Step 7: Upload build artifacts (for PR preview)
       - name: Upload build artifacts
         if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
