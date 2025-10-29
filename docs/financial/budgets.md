@@ -10,6 +10,7 @@ Ward financial clerks are responsible for helping prepare and monitor ward budge
 ## Resources
 
 - [Church Handbook - Chapter 34: Financial Management](https://www.churchofjesuschrist.org/study/manual/general-handbook/34-finances-and-audits)
+
 - [LCR Finance System](https://lcr.churchofjesuschrist.org/)
 
 ---

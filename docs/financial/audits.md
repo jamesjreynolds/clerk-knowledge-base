@@ -10,6 +10,7 @@ Annual financial audits are required for all wards. Ward financial clerks play a
 ## Resources
 
 - [Church Handbook - Chapter 34: Financial Management](https://www.churchofjesuschrist.org/study/manual/general-handbook/34-finances-and-audits)
+
 - [LCR Finance System](https://lcr.churchofjesuschrist.org/)
 
 ---

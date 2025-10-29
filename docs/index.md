@@ -12,8 +12,11 @@ This knowledge base provides detailed procedures, best practices, and practical 
 Procedures for managing membership records, quarterly reports, finding lost members, and other membership-related responsibilities.
 
 **Key Topics:**
+
 - Quarterly Report submission procedures
+
 - Finding and updating lost member records
+
 - Membership record management
 
 ---
@@ -22,10 +25,15 @@ Procedures for managing membership records, quarterly reports, finding lost memb
 Comprehensive guidance on financial clerk responsibilities, from budgets and expenses to audits and compliance.
 
 **Key Topics:**
+
 - Budget preparation and management
+
 - Expense handling and reimbursement procedures
+
 - Financial audit preparation
+
 - Creating signature cards
+
 - Donation handling procedures
 
 ---
@@ -48,9 +56,13 @@ Guidance on documenting and preserving ward history throughout the year.
 Specific responsibilities for clerks serving in agent bishop capacities, including building management and coordination.
 
 **Key Topics:**
+
 - Building committee coordination
+
 - Maintenance request procedures
+
 - Supply ordering for meetinghouse library
+
 - Member cleaning coordination
 
 ---
@@ -72,7 +84,9 @@ Specific responsibilities for clerks serving in agent bishop capacities, includi
 ## Quick Links
 
 - [Church Handbook (Official)](https://www.churchofjesuschrist.org/study/manual/general-handbook)
+
 - [Leader and Clerk Resources (LCR)](https://lcr.churchofjesuschrist.org/)
+
 - [Frequently Asked Questions](#) *(Coming Soon)*
 
 ---

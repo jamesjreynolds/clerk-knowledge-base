@@ -37,7 +37,9 @@ Every expense reimbursement MUST meet all these criteria:
 When an expense request comes in through LCR:
 
 1. **Open the request** in LCR Expenses module
+
 2. **Note the requester name** and amount
+
 3. **Check submission date** (should be timely, not months old)
 
 ### Step 2: Verify Documentation
@@ -67,7 +69,9 @@ Documentation Checklist:
 Check that two proper approvals are present:
 
 1. **Count the approvals** - Must be exactly two
+
 2. **Check the names** - Both must be bishopric members
+
 3. **Verify payee exclusion** - Payee's name cannot be an approver
 
 Example approval check:
@@ -93,8 +97,11 @@ Example approval check:
 Before final processing, verify this isn't a duplicate:
 
 1. **Search recent reimbursements** for same payee (last 2 months)
+
 2. **Compare amounts** - Is there an identical or very similar amount?
+
 3. **Check dates** - Does the receipt date match a previous reimbursement?
+
 4. **Review purpose** - Is it possibly the same expense submitted twice?
 
 !!! danger "Duplicate Reimbursement Prevention"
@@ -112,14 +119,19 @@ Once verification is complete:
 **If all requirements met:**
 
 1. Add comment in LCR: "Verified: documentation complete, two proper approvals, no duplicate"
+
 2. Mark as "Approved for Payment"
+
 3. Payment will be processed in next check run
 
 **If any issues found:**
 
 1. Set status to "Needs Information" or "Returned"
+
 2. Add detailed comment explaining exactly what's needed
+
 3. Notify payee (LCR should email automatically, but confirm)
+
 4. Track for follow-up
 
 ## Special Situations
@@ -161,8 +173,11 @@ Sometimes members mistakenly submit donations through expenses:
 When activity coordinators pay online with personal cards:
 
 1. **Receipt must show**: Online confirmation, amount, activity name
+
 2. **Documentation**: Screenshot of registration confirmation acceptable
+
 3. **Timing**: Should be submitted soon after activity (not months later)
+
 4. **Budget check**: Verify activity has budget available
 
 ## Handling Donation Slips
@@ -179,9 +194,13 @@ Related to expense processing, proper donation handling:
 **If donation amount doesn't match what's written on the slip:**
 
 1. **DO NOT deposit the donation**
+
 2. Give the donation to the bishop to hold securely
+
 3. Contact the member to resolve the discrepancy
+
 4. Once resolved, deposit and record correct amount
+
 5. Document the resolution in clerk notes
 
 ### Activity Donations (Camps, Trek, etc.)
@@ -189,15 +208,23 @@ Related to expense processing, proper donation handling:
 Members often donate for camps, Trek, or activities:
 
 **Online Donations:**
+
 - System allocates to "General Offerings" by default
+
 - **Clerk must manually move** to appropriate activity account in LCR
+
 - Don't wait - reallocate immediately after reconciliation
 
 **Check Donations:**
+
 - Must have accompanying donation slip
+
 - Member must sign slip
+
 - Slip should designate "General Offerings" (to be reallocated)
+
 - Memo line can note "For Girls Camp" for reference
+
 - Clerk reallocates after recording
 
 ## Monthly Best Practices
@@ -207,7 +234,9 @@ Members often donate for camps, Trek, or activities:
 Don't let expenses pile up. Review at least weekly:
 
 - Process new submissions within 2-3 days
+
 - Follow up on pending items
+
 - Clear out old "Needs Information" requests
 
 ### Monthly Bishop Review
@@ -215,8 +244,11 @@ Don't let expenses pile up. Review at least weekly:
 During monthly financial review meeting:
 
 - Show bishop summary of expense activity
+
 - Flag any unusual patterns or concerns
+
 - Verify all reimbursements were appropriate
+
 - Discuss any policy questions
 
 ### Audit Preparation
@@ -224,9 +256,13 @@ During monthly financial review meeting:
 Keep yourself audit-ready:
 
 - All receipts legible and complete
+
 - All approvals proper (can be fixed retroactively if needed)
+
 - No duplicates
+
 - Purpose documented
+
 - No old unsettled advances
 
 ## Common Audit Exceptions and Prevention
@@ -244,8 +280,11 @@ Keep yourself audit-ready:
 ## Resources and Links
 
 - [Church Handbook - Chapter 34.7: Reimbursements](https://www.churchofjesuschrist.org/study/manual/general-handbook/34-finances-and-audits#title_number21)
+
 - [LCR Expenses Module](https://lcr.churchofjesuschrist.org/)
+
 - [Financial Audits](audits.md) - Audit preparation guidance
+
 - [Budgets](budgets.md) - Budget management procedures
 
 ---

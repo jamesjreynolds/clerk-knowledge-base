@@ -1,0 +1,13 @@
+{
+  "plugins": {
+    "MD032": {
+      "enabled": true
+    }
+  },
+  "ignore_paths": [
+    "node_modules/",
+    ".venv/",
+    "site/",
+    "specs/"
+  ]
+}
