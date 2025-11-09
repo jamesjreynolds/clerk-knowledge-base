@@ -162,6 +162,7 @@ Sometimes members mistakenly submit donations through expenses:
     **Donations require donation slips**, not expense forms.
 
     If you see:
+
     - Contribution to missionary fund
     - Donation to humanitarian aid
     - Fast offering payment

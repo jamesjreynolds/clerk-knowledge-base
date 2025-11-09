@@ -13,6 +13,7 @@ Annual financial audits are conducted for all wards and stakes to ensure proper 
 
 - **Between 15 January and 28 February**
   - Audits are conducted and completed.
+
 - **Between 16 March and 15 April**
   - Exceptions are reviewed and resolved.
 
@@ -20,6 +21,7 @@ Annual financial audits are conducted for all wards and stakes to ensure proper 
 
 - **Between 15 July and 31 August**
   - Audits are conducted and completed.
+
 - **Between 16 September and 15 October**
   - Exceptions are reviewed and resolved.
 
