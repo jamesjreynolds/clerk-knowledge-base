@@ -1,204 +1,121 @@
-# Annual History
+# Ward and Stake Histories
 
-Welcome to the Annual History section of the Ward Clerk Knowledge Base. This section provides guidance on documenting and preserving your ward's history throughout the year.
+!!! info "New Process: Stories of Faith"
+    **The Church has transitioned to a new approach for preserving ward and stake histories.** Instead of comprehensive annual reports, we now focus on creating individual faith-promoting stories that inspire and strengthen members' testimonies of Jesus Christ.
 
 ## Overview
 
-The annual history is an important record that documents the significant events, changes, and spiritual highlights of your ward during the calendar year. As ward clerk, you help compile this history for submission to Church headquarters and for the ward's permanent records.
+Ward and stake histories are now created through the **Unit History tool** in Church systems. This tool allows members to write and share inspiring stories about faith-promoting experiences, service, and spiritual growth. These stories become part of your ward's permanent historical record and help build faith for current and future generations.
 
-## Purpose of Annual History
+!!! quote "Why Stories Matter"
+    "Our history is inspiring. This history is our shared heritage … . Why does this matter? Why would we spend so much time telling these stories? It's because these stories give us real-life examples of the power of coming to know our Savior." —Elder Dale G. Renlund
 
-The annual history serves several important purposes:
+## The Process: Create, Approve, and Share
 
-- **Preserves ward heritage** for future generations
+Writing and sharing faith-promoting stories is designed to be simple and accessible:
 
-- **Documents spiritual experiences** and growth
+1. **Create** - Write about meaningful experiences and spiritual moments
+2. **Approve** - Submit for review by appropriate leaders
+3. **Share** - Publish stories for ward members and future generations
 
-- **Records leadership changes** and significant events
+## Using the Unit History Tool
 
-- **Provides historical context** for understanding ward development
+### Accessing My Stories
 
-- **Fulfills reporting requirements** to Church headquarters
+The Unit History tool organizes your stories through several tabs:
 
-## What to Include
+- **Invites** - Stories others have asked you to write (shows red badge for pending items)
+- **Drafts** - Stories you're currently writing
+- **Submitted** - Stories awaiting approval
+- **Published** - Stories that have been approved and shared
+- **Returned** - Stories sent back for revisions
 
-### Required Elements
+### Story Guidelines
 
-- **Leadership changes** - New bishops, bishopric members, organization presidents
+#### What to Write About
 
-- **Membership statistics** - Baptisms, confirmations, moves in/out
+Focus on capturing real experiences in an authentic, conversational way. Write about anything meaningful that demonstrates faith in action:
 
-- **Significant events** - Building dedications, major service projects
+- **The goodness of God** - Miracles, blessings, answered prayers
+- **Bringing people closer to Christ** - Conversion stories, spiritual experiences
+- **Temple and family history work** - Ordinances, discoveries, sacred experiences
+- **Missionary and ministering efforts** - Baptisms, service, teaching moments
+- **Acts of service** - Community help, humanitarian work
+- **Strengthening the youth** - Seminary, camps, spiritual growth
 
-- **Organization highlights** - Key accomplishments and activities
+!!! tip "Spiritual Endeavor"
+    **Don't worry about perfection.** When you approach stories with love and listen for the Spirit, your writing will bless lives today and for generations to come. You are exactly where the Savior needs you to be!
 
-### Recommended Elements
+#### Connecting People to Stories
 
-- **Spiritual highlights** - Faith-promoting experiences (with permission)
+- **Tag individuals mentioned** using the "People Mentioned in the Story" feature
+- **Include ward organizations** (quorums, classes, etc.) when relevant
+- **Focus on both individual and group experiences** - both are valuable
 
-- **Service projects** - Community service and humanitarian efforts
+## What to Avoid
 
-- **Celebrations** - Ward anniversaries, special gatherings
+The Unit History tool is **not** for storing administrative records like meeting minutes or quarterly reports. Its purpose is to build faith in Jesus Christ.
 
-- **Challenges overcome** - How the ward responded to difficulties
+### Prohibited Content
 
-- **Youth accomplishments** - Seminary/institute completions, youth temple trips
+**Never include:**
 
-- **Missionary service** - Missionaries called and returned
+- Personal confidential information without explicit permission
+- Reports of confessions or Church membership councils
+- Information from private Church settings (leadership meetings)
+- Specific personal health information
+- Individual financial information
+- Church financial details, donations, or welfare assistance
+- Temple interior details, rites, ceremonies, or clothing
+- Information violating data privacy laws (addresses, phone numbers, full birth dates, etc.)
+- Materials created by others without permission
+- AI-generated content
 
-### What NOT to Include
+!!! warning "Privacy Protection"
+    **Data privacy laws require consent** for using identifiable information about individuals who are not Church members. Review the Local Unit History Content Submission Agreement before publishing stories about non-members.
 
-- **Personal confidential matters** - Disciplinary actions, sensitive health issues
+!!! tip "Sensitivity Review"
+    When submitting stories, you can include comments for the approver about specific sensitivities or concerns you want them to review carefully.
 
-- **Financial specifics** - Detailed budget numbers (summary only if relevant)
+## Getting Started
 
-- **Negative gossip** - Focus on positive growth and learning
+### Finding Story Ideas
 
-- **Identifying information** without permission - Names/photos require consent
+- **Reflect on the year** - What faith-promoting experiences touched your heart?
+- **Talk to ward members** - Ask about their spiritual experiences
+- **Review ward activities** - Look for meaningful moments in service, teaching, ordinances
+- **Listen for the Spirit** - Pay attention to promptings about what to record
 
-## Collection Methods
+### Writing Tips
 
-### Throughout the Year
-Keep a running document where you note significant events as they occur:
+- **Be authentic** - Write in a natural, conversational style
+- **Focus on Christ** - Show how experiences bring people closer to the Savior
+- **Include details** - Dates, names (with permission), specific circumstances
+- **Keep it positive** - Emphasize learning, growth, and spiritual blessings
 
-- **Monthly**: Review sacrament meeting programs for events
+### Approval Process
 
-- **Quarterly**: Meet with organization leaders for highlights
+- **Submit stories** through the Unit History tool
+- **Approvers review** for appropriateness and sensitivity
+- **Revisions may be requested** if needed
+- **Approved stories** are published and become part of ward history
 
-- **After major events**: Document while details are fresh
-
-- **Leadership changes**: Record immediately with dates
-
-### Organization Leader Interviews
-In November/December, interview:
-
-- Relief Society and Elders Quorum presidencies
-
-- Young Women and Young Men presidencies
-
-- Primary and Sunday School presidencies
-
-- Other key leaders (activities committee, missionary coordination)
-
-Ask: "What were the 2-3 most significant or faith-promoting events in your organization this year?"
-
-## Writing Guidelines
-
-### Tone and Style
-
-- Write in **third person** (avoid "I" and "we")
-
-- Use **past tense** (it's a historical record)
-
-- Be **factual and objective** (not promotional)
-
-- Include **dates and specifics** when possible
-
-- Make it **readable and interesting** (not just statistics)
-
-### Length
-
-- Typical ward history: **2-5 pages**
-
-- Focus on **quality over quantity**
-
-- Include enough detail to be meaningful
-
-- Don't inflate with unnecessary information
-
-### Example Entries
-
-!!! example "Good Example"
-    "On April 15, 2024, the ward completed a service project at the local food bank, with 47 members participating to sort and package 2,500 pounds of food for distribution. Sister Maria Rodriguez organized the effort after learning of the community need during her shift at the bank."
-
-!!! example "Poor Example"
-    "We had a great service project this year that everyone really enjoyed. It was amazing to see so many people help out and serve others."
-
-## Timeline and Deadlines
-
-### October - November
-
-- Begin collecting information from organization leaders
-
-- Review calendar and meeting programs from the year
-
-- Interview key leaders about significant events
-
-### December
-
-- Draft the history document
-
-- Review with bishopric for accuracy and appropriateness
-
-- Obtain necessary permissions for names/photos
-
-### January
-
-- Finalize the history
-
-- Submit through LCR system
-
-- **Deadline**: January 31st
-
-- Provide copy to bishop for ward records
-
-## Technical Requirements
-
-### Format
-
-- Submit through Leader and Clerk Resources (LCR)
-
-- Follow any specific formatting requirements in LCR
-
-- Include ward name, stake, and year prominently
-
-- Use readable font and clear organization
-
-### Photos
-
-- Include 3-10 photos if possible
-
-- Obtain permission for identifiable individuals
-
-- Use high-quality images
-
-- Caption each photo with context and date
-
-## Common Challenges
-
-!!! tip "Starting from Scratch"
-    If you're compiling history late and don't have notes:
-
-    1. Review sacrament meeting programs saved in LCR
-    2. Check ward calendar for major events
-    3. Interview bishopric members for their memories
-    4. Contact organization leaders
-    5. Review ward newsletter/bulletin archives
-
-!!! warning "Sensitive Information"
-    When in doubt about including information:
-
-    - Consult with the bishop
-    - Err on the side of privacy protection
-    - Focus on positive learning and growth
-    - Obtain explicit permission for personal stories
-
-## Related Resources
+## Resources
 
 - [Church Handbook - Chapter 33.6: Ward and Stake Annual History](https://www.churchofjesuschrist.org/study/manual/general-handbook/33-records-and-reports#title_number17)
-
-- [LCR Annual History Submission](https://lcr.churchofjesuschrist.org/)
-
-- Reports Section (for submission procedures)
+- [Unit History Tool](https://unithistory.churchofjesuschrist.org/) - Access through Church account
+- [Local Unit History Content Submission Agreement](https://www.churchofjesuschrist.org/) - Updated 2023-09-25
 
 ---
 
-## Quick Links
+## Transition from Annual Reports
 
-- Annual History Template *(Coming Soon)*
+!!! info "Process Change"
+    The Church has moved away from comprehensive annual history documents toward individual faith-promoting stories. This approach:
 
-- Sample Histories *(Coming Soon)*
+    - **Makes history more accessible** - Anyone can contribute stories
+    - **Focuses on inspiration** - Stories strengthen faith and testimony
+    - **Preserves experiences** - Individual moments that might be lost in annual summaries
+    - **Builds community** - Members connect through shared spiritual experiences
 
-- Photo Guidelines *(Coming Soon)*
-
-- Interview Questions for Leaders *(Coming Soon)*
+If you have questions about the new process or need help accessing the Unit History tool, contact your ward clerk or stake clerk.

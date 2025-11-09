@@ -9,6 +9,7 @@ This knowledge base provides detailed procedures, best practices, and practical 
 ## Main Sections
 
 ### [Membership](membership/index.md)
+
 Procedures for managing membership records, quarterly reports, finding lost members, and other membership-related responsibilities.
 
 **Key Topics:**
@@ -22,6 +23,7 @@ Procedures for managing membership records, quarterly reports, finding lost memb
 ---
 
 ### [Financial](financial/index.md)
+
 Comprehensive guidance on financial clerk responsibilities, from budgets and expenses to audits and compliance.
 
 **Key Topics:**
@@ -39,6 +41,7 @@ Comprehensive guidance on financial clerk responsibilities, from budgets and exp
 ---
 
 ### [Reports](reports/index.md)
+
 Information about various reports ward clerks need to prepare and submit.
 
 **Coming Soon:** Detailed reporting procedures and schedules.
@@ -46,6 +49,7 @@ Information about various reports ward clerks need to prepare and submit.
 ---
 
 ### [Annual History](annual-history/index.md)
+
 Guidance on documenting and preserving ward history throughout the year.
 
 **Coming Soon:** Annual history compilation procedures and best practices.
@@ -53,6 +57,7 @@ Guidance on documenting and preserving ward history throughout the year.
 ---
 
 ### [Agent Bishop Responsibilities](agent-bishop/index.md)
+
 Specific responsibilities for clerks serving in agent bishop capacities, including building management and coordination.
 
 **Key Topics:**
