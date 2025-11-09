@@ -207,25 +207,31 @@ Related to expense processing, proper donation handling:
 
 Members often donate for camps, Trek, or activities:
 
-**Online Donations:**
+**Online Donations (Updated Process):**
 
-- System allocates to "General Offerings" by default
+!!! info "New Camp Category Available"
+    **A new "camp" category is now available in the online donation form!**
 
-- **Clerk must manually move** to appropriate activity account in LCR
+    - Members can select "camp" category and specify the youth's name
+    - **No manual reallocation needed** - funds go directly to camp account
+    - For local ward/stake camps only (not FSY or fundraisers)
+    - Eliminates previous manual reallocation requirement
 
+**Legacy Online Donations (General Offerings):**
+
+- If member uses "General Offerings" category, clerk must manually move to appropriate activity account in LCR
 - Don't wait - reallocate immediately after reconciliation
 
 **Check Donations:**
 
 - Must have accompanying donation slip
-
 - Member must sign slip
-
-- Slip should designate "General Offerings" (to be reallocated)
-
+- Slip should designate "General Offerings" (to be reallocated) or specify camp purpose
 - Memo line can note "For Girls Camp" for reference
-
 - Clerk reallocates after recording
+
+!!! tip "Use the New Camp Category"
+    **Encourage members to use the new "camp" category for online donations** - it eliminates manual work and ensures proper fund allocation.
 
 ## Monthly Best Practices
 
@@ -293,33 +299,31 @@ Keep yourself audit-ready:
 
 Print this for your desk:
 
-```
-EXPENSE APPROVAL CHECKLIST
---------------------------
-☐ Legible receipt with line items and tax
-☐ Reimbursement form completed
-☐ TWO proper approvals
-☐ Payee is NOT an approver
-☐ No duplicate in last 2 months
-☐ Amount matches receipt
-☐ Purpose clear and appropriate
-☐ Budget available
+    EXPENSE APPROVAL CHECKLIST
+    --------------------------
+    ☐ Legible receipt with line items and tax
+    ☐ Reimbursement form completed
+    ☐ TWO proper approvals
+    ☐ Payee is NOT an approver
+    ☐ No duplicate in last 2 months
+    ☐ Amount matches receipt
+    ☐ Purpose clear and appropriate
+    ☐ Budget available
 
-CASH ADVANCE RULES
-------------------
-☐ Two people receive
-☐ Two people oversee spending
-☐ All receipts documented
-☐ Remaining funds returned
-☐ Settled within 30 days
+    CASH ADVANCE RULES
+    ------------------
+    ☐ Two people receive
+    ☐ Two people oversee spending
+    ☐ All receipts documented
+    ☐ Remaining funds returned
+    ☐ Settled within 30 days
 
-DONATION RULES
---------------
-☐ Every donation needs slip
-☐ Member must sign slip
-☐ If amount ≠ slip, HOLD and call member
-☐ Online donations → move to activity account
-☐ Check donations → get slip first
-```
+    DONATION RULES
+    --------------
+    ☐ Every donation needs slip
+    ☐ Member must sign slip
+    ☐ If amount ≠ slip, HOLD and call member
+    ☐ Online donations → move to activity account
+    ☐ Check donations → get slip first
 
 *Questions? Contact your stake financial clerk or refer to Church Handbook Chapter 34.*
