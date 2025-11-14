@@ -97,6 +97,7 @@ markdown_extensions:
 # Navigation structure
 nav:
   - Home: index.md
+  - Key Dates: key-dates.md
   - Membership:
     - Overview: membership/index.md
     - Quarterly Reports: membership/quarterly-reports.md

@@ -181,6 +181,68 @@ When activity coordinators pay online with personal cards:
 
 4. **Budget check**: Verify activity has budget available
 
+### Utah Sales Tax Reporting
+
+!!! info "Utah Units Only"
+    This section applies only to wards and stakes located in Utah. The Church claims refunds for sales tax on eligible expenditures, and proper coding in LCR ensures accurate tax recovery.
+
+**Overview**
+
+The Church is entitled to claim refunds for Utah sales tax paid on most local unit expenditures. Financial clerks record the sales tax amount when entering expenses in LCR, and Church headquarters handles the refund filing process.
+
+#### When to Record Sales Tax
+
+**Record sales tax amounts for:**
+
+| Category | Examples | Why It Qualifies |
+|----------|----------|------------------|
+| **Tangible Goods** | Clothing, school supplies, groceries, household items | Church can claim refunds on goods purchased by employees or volunteers |
+| **General Ward Expenses** | Activity supplies, building materials, equipment | Standard taxable purchases for Church operations |
+
+!!! tip "Sales Tax Documentation"
+    Always verify the sales tax amount on the receipt before entering it into LCR. The amount should match exactly what was charged.
+
+#### When NOT to Record Sales Tax
+
+**Leave the "Utah Sales Tax" field blank for fast-offering payments in these categories:**
+
+| Category | Examples | Why It's Excluded |
+|----------|----------|-------------------|
+| **Utilities** | Electric, gas, water, internet, phone | Member's contractual obligation |
+| **Car Payments** | Auto loans, lease payments | Member's contractual obligation |
+| **Housing Costs** | Mortgage payments, rent | Not subject to sales tax |
+| **Medical Expenses** | Medical bills, prescriptions, doctor visits | Not subject to sales tax |
+| **Counseling Services** | Therapy, counseling sessions | Not subject to sales tax |
+| **Other Non-Taxed Items** | Any payment where no sales tax was assessed | No refund available |
+
+!!! warning "Fast-Offering Payment Rules"
+    The Church cannot claim sales tax refunds on fast-offering payments that are the member's contractual obligations (utilities, car payments) or on reimbursements for tangible goods purchased by recipients for themselves.
+
+#### Recording Process
+
+**For expenses with eligible sales tax:**
+
+1. Process the expense normally in LCR
+2. Locate the "Utah Sales Tax" field in the expense record
+3. Enter the exact sales tax amount from the receipt
+4. Verify the amount matches the receipt documentation
+
+**For expenses without eligible sales tax:**
+
+1. Process the expense normally in LCR
+2. Leave the "Utah Sales Tax" field blank or enter $0.00
+3. Do not attempt to calculate or estimate sales tax
+
+!!! info "Automatic Processing"
+    Church headquarters automatically processes all sales tax refund claims. Local clerks only need to accurately record the tax amounts in LCR.
+
+#### Questions and Support
+
+For questions about Utah sales tax reporting:
+
+- **Global Services Department**: (855) 537-4357
+- **Church Handbook**: Chapter 34 - Financial Management
+
 ## Handling Donation Slips
 
 Related to expense processing, proper donation handling:
